@@ -15,7 +15,7 @@ const client = new Client({
 	user: process.env.DB_USER,
 	password: process.env.DB_PASSWORD,
 	database: process.env.DB_NAME,
-	port: 5432,
+	port: process.env.DB_PORT,
 });
 
 client.connect();
@@ -127,5 +127,5 @@ app.post("/addRecord", async (req, res) => {
 });
 
 app.listen(3001, () => {
-	console.log("Server started on http://localhost:3001");
+	console.log("Server started!!");
 });

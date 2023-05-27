@@ -1,0 +1,30 @@
+version: "1.0"
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    depends_on:
+      - database
+  database:
+    container_name: "postgresdb"
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
