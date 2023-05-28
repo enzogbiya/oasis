@@ -46,6 +46,7 @@ const EditEntryForm = (props) => {
 		const currentDate = moment().startOf("day");
 		return current < currentDate;
 	};
+
 	return (
 		<Card loading={isLoadingForm}>
 			<Form layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed} form={form}>

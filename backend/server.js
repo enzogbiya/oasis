@@ -23,7 +23,7 @@ client.connect();
 app.get("/", (req, res) => {
 	client
 		.query(
-			'CREATE TABLE IF NOT EXISTS "oasis_records" ("id" SERIAL PRIMARY KEY, "fio" VARCHAR(100) NOT NULL, "date" DATE NOT NULL, "info" VARCHAR(250))'
+			'CREATE TABLE IF NOT EXISTS "oasis_records" ("id" SERIAL PRIMARY KEY, "fio" VARCHAR(100) NOT NULL, "date" TIMESTAMP WITHOUT TIME ZONE NOT NULL, "info" VARCHAR(250))'
 		)
 		.then((result) => {
 			console.log("Query result:", result.rows);

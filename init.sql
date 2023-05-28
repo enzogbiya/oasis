@@ -1,0 +1,6 @@
+CREATE TABLE oasis_records (
+    id SERIAL PRIMARY KEY,
+    fio VARCHAR(100) NOT NULL,
+    date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    info VARCHAR(250)
+);

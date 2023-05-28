@@ -16,7 +16,7 @@ const Entry = (props) => {
 			]}
 		>
 			<Meta
-				title={`${moment(date).format("HH:mm DD-MM-YYYY")} ${fio}`}
+				title={`${moment.utc(date).format("HH:mm DD-MM-YYYY")} ${fio}`}
 				description={`${additionalInfo ? additionalInfo : "Дополнительная информация отсутствует"}`}
 			/>
 		</Card>
